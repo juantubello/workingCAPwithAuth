@@ -35,6 +35,13 @@ modules:
         url: '~{url}'
         timeout: 60000
         forwardAuthToken: true
+    - name: sap-approuter-userapi
+      group: destinations
+      properties:
+        name: sap-approuter-userapi
+        url: '~{url}'
+        timeout: 60000
+        forwardAuthToken: true
 
  # --------------------- SERVER MODULE ------------------------
  - name: myappl-srv
@@ -52,6 +59,9 @@ modules:
     - name: myappl-uaa
    provides:
     - name: srv-api      # required by consumers of CAP services (e.g. approuter)
+      properties:
+        url: ${default-url}
+    - name: sap-approuter-userapi      # required by consumers of CAP services (e.g. approuter)
       properties:
         url: ${default-url}
 
