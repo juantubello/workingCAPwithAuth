@@ -5,7 +5,8 @@ using {managed} from '@sap/cds/common';
 service CatalogService {
 
     entity requests as projection on my.requests;
-
+    entity Roles as projection on my.Roles;
+    
     @requires: 'viewer'
     @readonly
     entity Books                               as

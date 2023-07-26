@@ -5,6 +5,11 @@ using {
   managed
 } from '@sap/cds/common';
 
+entity Roles {
+  admin  : Boolean;
+  viewer : Boolean;
+}
+
 entity requests : managed {
   key id    : Integer;
       email : String;
