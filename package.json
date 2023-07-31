@@ -14,7 +14,9 @@
     "cors": "^2.8.5",
     "express": "^4",
     "hdb": "^0.19.5",
-    "passport": "^0.6.0"
+    "passport": "^0.6.0",
+    "qrcode": "^1.5.3",
+    "speakeasy": "^2.0.0"
   },
   "devDependencies": {
     "sqlite3": "^5"

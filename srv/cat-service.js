@@ -1,4 +1,5 @@
 const cds = require("@sap/cds");
+const TWOFA = require('./modules/2fa');
 
 function getUserRoles(req) {
     return {
@@ -14,5 +15,12 @@ module.exports = (srv) => {
     srv.on('READ', 'Roles', async req => {
         const roles = getUserRoles(req)
         return roles
+    })
+    srv.on('READ', 'TwoFACode', async req => {
+        const qr = await TWOFA.generate2FACode()
+        console.log("va el qr")
+        console.log(qr)
+        // let qr = "abc"
+        return { "image": qr }
     })
 }

@@ -10,6 +10,10 @@ entity Roles {
   viewer : Boolean;
 }
 
+entity TwoFACode {
+  image: String;
+}
+
 entity requests : managed {
   key id    : Integer;
       email : String;
