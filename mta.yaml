@@ -23,8 +23,8 @@ modules:
    type: approuter.nodejs
    path: app
    parameters:
-     disk-quota: 1024M
-     memory: 256M
+     disk-quota: 2048M
+     memory: 400M
    requires:
     # Resources extracted from CAP configuration
     - name: myappl-uaa
@@ -49,8 +49,8 @@ modules:
    type: nodejs
    path: gen/srv
    parameters:
-     disk-quota: 1024M
-     memory: 256M
+     disk-quota: 2048M
+     memory: 400M
    properties:
      EXIT: 1
    requires:
@@ -72,8 +72,8 @@ modules:
    path: gen/db  
    parameters:
      buildpack: nodejs_buildpack
-     disk-quota: 1024M
-     memory: 256M
+     disk-quota: 2048M
+     memory: 400M
    requires:
     # 'hana' and 'xsuaa' resources extracted from CAP configuration
     - name: myappl-db

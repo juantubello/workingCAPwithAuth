@@ -7,6 +7,7 @@ service CatalogService {
     entity requests as projection on my.requests;
     entity Roles as projection on my.Roles;
     entity TwoFACode as projection on my.TwoFACode;
+    entity verifyToken as projection on my.verifyToken
     
     @requires: 'viewer'
     @readonly

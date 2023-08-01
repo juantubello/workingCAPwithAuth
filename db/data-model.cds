@@ -12,6 +12,12 @@ entity Roles {
 
 entity TwoFACode {
   image: String;
+  secret: String;
+}
+
+entity verifyToken {
+  key token: String;
+  isValid: Boolean;
 }
 
 entity requests : managed {

@@ -17,10 +17,12 @@ module.exports = (srv) => {
         return roles
     })
     srv.on('READ', 'TwoFACode', async req => {
-        const qr = await TWOFA.generate2FACode()
-        console.log("va el qr")
-        console.log(qr)
-        // let qr = "abc"
-        return { "image": qr }
+        const response = await TWOFA.generate2FACode()
+        return response
+    })
+    srv.on('READ', 'verifyToken', async req => {
+        const token = req.data.token
+        const response = await TWOFA.verifyToken(token)
+        return { "token": token, "isValid": response }
     })
 }
